@@ -1,0 +1,17 @@
+C:\Users\User\source\repos\FormGiris.cs\obj\Debug\FormGiris.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\FormGiris.cs\obj\Debug\FormGiris.FormGiris.resources
+C:\Users\User\source\repos\FormGiris.cs\obj\Debug\FormStokKart.FormStokKart.resources
+C:\Users\User\source\repos\FormGiris.cs\obj\Debug\FormGiris.cs.Properties.Resources.resources
+C:\Users\User\source\repos\FormGiris.cs\obj\Debug\FormGiris.csproj.GenerateResource.cache
+C:\Users\User\source\repos\FormGiris.cs\obj\Debug\FormGiris.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\FormGiris.cs\bin\Debug\FormGiris.cs.exe.config
+C:\Users\User\source\repos\FormGiris.cs\bin\Debug\FormGiris.cs.exe
+C:\Users\User\source\repos\FormGiris.cs\bin\Debug\FormGiris.cs.pdb
+C:\Users\User\source\repos\FormGiris.cs\obj\Debug\FormGiris.cs.exe
+C:\Users\User\source\repos\FormGiris.cs\obj\Debug\FormGiris.cs.pdb
+C:\Users\User\source\repos\FormGiris.cs\obj\Debug\FormGiris.cs.exe.config
+C:\Users\User\source\repos\FormGiris.cs\bin\Debug\EntityFramework.dll
+C:\Users\User\source\repos\FormGiris.cs\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\source\repos\FormGiris.cs\bin\Debug\EntityFramework.xml
+C:\Users\User\source\repos\FormGiris.cs\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\source\repos\FormGiris.cs\obj\Debug\FormGiris.csproj.Up2Date
