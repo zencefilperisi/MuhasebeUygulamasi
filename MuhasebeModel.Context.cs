@@ -13,10 +13,10 @@ namespace FormGiris.cs
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MuhasebeDBEntities1 : DbContext
+    public partial class MuhasebeDBEntities2 : DbContext
     {
-        public MuhasebeDBEntities1()
-            : base("name=MuhasebeDBEntities1")
+        public MuhasebeDBEntities2()
+            : base("name=MuhasebeDBEntities2")
         {
         }
     
@@ -25,6 +25,7 @@ namespace FormGiris.cs
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<CariKart> CariKart { get; set; }
         public virtual DbSet<Kullanici> Kullanici { get; set; }
         public virtual DbSet<StokKart> StokKart { get; set; }
     }

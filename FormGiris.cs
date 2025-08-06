@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FormGiris.cs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -64,7 +65,7 @@ namespace FormGiris
                 {
                     MessageBox.Show("Giriş başarılı!");
                     this.Hide();
-                    FormStokKart.FormStokKart stok = new FormStokKart.FormStokKart();
+                    FormStokKart stok = new FormStokKart();
                     stok.Show();
                 }
                 else
@@ -80,6 +81,10 @@ namespace FormGiris
             {
                 conn.Close();
             }
+
+            FormAnaMenu anaMenu = new FormAnaMenu();
+            anaMenu.Show();
+            this.Hide(); // Giriş ekranını gizle
         }
 
     }

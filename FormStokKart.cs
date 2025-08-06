@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FormStokKart
+namespace FormGiris
 {
     public partial class FormStokKart : Form
     {
@@ -21,7 +21,7 @@ namespace FormStokKart
         }
         private void FormStokKart_Load(object sender, EventArgs e)
         {
-            using (var db = new MuhasebeModel())
+            using (var db = new MuhasebeDBEntities2())
             {
                 if (!db.StokKart.Any())
                 {
@@ -68,7 +68,7 @@ namespace FormStokKart
         {
             try
             {
-                using (var db = new MuhasebeModel())
+                using (var db = new MuhasebeDBEntities2())
                 {
                     var yeniStok = new StokKart
                     {
@@ -96,17 +96,23 @@ namespace FormStokKart
 
         private void StoklariListele()
         {
-            try
+            using (var db = new MuhasebeDBEntities2())
             {
-                using (var db = new MuhasebeModel())
+                var stoklar = db.StokKart.Select(s => new
                 {
-                    var stoklar = db.StokKart.ToList();
-                    dataGridStoklar.DataSource = stoklar;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Listeleme hatası: " + ex.Message);
+                    s.Id,
+                    s.StokKodu,
+                    s.StokAdi,
+                    s.Birim,
+                    s.Barkod,
+                    s.KDV,
+                    s.Aciklama
+                }).ToList();
+
+                dataGridStoklar.DataSource = stoklar;
+
+                if (dataGridStoklar.Columns["Id"] != null)
+                    dataGridStoklar.Columns["Id"].Visible = false;
             }
         }
 
@@ -122,19 +128,31 @@ namespace FormStokKart
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            if (dataGridStoklar.CurrentRow != null)
+            if (dataGridStoklar.SelectedRows.Count > 0)
             {
-                string stokKodu = dataGridStoklar.CurrentRow.Cells["StokKodu"].Value.ToString();
+                int id = Convert.ToInt32(dataGridStoklar.SelectedRows[0].Cells["Id"].Value);
 
-                using (var db = new MuhasebeModel())
+                var onay = MessageBox.Show("Seçili stoğu silmek istediğinize emin misiniz?",
+                                           "Silme Onayı",
+                                           MessageBoxButtons.YesNo,
+                                           MessageBoxIcon.Warning);
+
+                if (onay == DialogResult.Yes)
                 {
-                    var stok = db.StokKart.FirstOrDefault(s => s.StokKodu == stokKodu);
-                    if (stok != null)
+                    using (var db = new MuhasebeDBEntities2())
                     {
-                        db.StokKart.Remove(stok);
-                        db.SaveChanges();
-                        MessageBox.Show("Stok başarıyla silindi.");
-                        StoklariListele();
+                        var stok = db.StokKart.FirstOrDefault(s => s.Id == id);
+                        if (stok != null)
+                        {
+                            db.StokKart.Remove(stok);
+                            db.SaveChanges();
+                            MessageBox.Show("Stok başarıyla silindi.");
+                            StoklariListele(); // Listeyi yenile
+                        }
+                        else
+                        {
+                            MessageBox.Show("Seçilen stok bulunamadı.");
+                        }
                     }
                 }
             }
@@ -159,28 +177,50 @@ namespace FormStokKart
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-            try
+            if (dataGridStoklar.SelectedRows.Count > 0)
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE StokKart SET StokAdi=@adi, Birim=@birim, Barkod=@barkod, KDV=@kdv, Aciklama=@aciklama WHERE StokKodu=@kod", conn);
-                cmd.Parameters.AddWithValue("@kod", txtStokKodu.Text);
-                cmd.Parameters.AddWithValue("@adi", txtStokAdi.Text);
-                cmd.Parameters.AddWithValue("@birim", txtBirim.Text);
-                cmd.Parameters.AddWithValue("@barkod", txtBarkod.Text);
-                cmd.Parameters.AddWithValue("@kdv", Convert.ToDecimal(txtKDV.Text));
-                cmd.Parameters.AddWithValue("@aciklama", txtAciklama.Text);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Stok başarıyla güncellendi.");
+                int id = Convert.ToInt32(dataGridStoklar.SelectedRows[0].Cells["Id"].Value);
+
+                using (var db = new MuhasebeDBEntities2())
+                {
+                    var stok = db.StokKart.FirstOrDefault(s => s.Id == id);
+                    if (stok != null)
+                    {
+                        stok.StokAdi = txtStokAdi.Text;
+                        stok.Birim = txtBirim.Text;
+                        stok.Barkod = txtBarkod.Text;
+                        stok.KDV = Convert.ToDecimal(txtKDV.Text);
+                        stok.Aciklama = txtAciklama.Text;
+
+                        db.SaveChanges();
+                        MessageBox.Show("Stok başarıyla güncellendi.");
+                        StoklariListele(); // Listeyi yenile
+                    }
+                    else
+                    {
+                        MessageBox.Show("Seçilen stok bulunamadı.");
+                    }
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Güncelleme hatası: " + ex.Message);
+                MessageBox.Show("Lütfen güncellemek için bir satır seçin.");
             }
-            finally
+        }
+
+        private void txtAra_TextChanged(object sender, EventArgs e)
+        {
+            using (var db = new MuhasebeDBEntities2())
             {
-                conn.Close();
-                StoklariListele();
-                Temizle();
+                string aranan = txtAra.Text.Trim();
+
+                var sonuc = db.StokKart
+                              .Where(s => s.StokAdi.Contains(aranan) || s.StokKodu.Contains(aranan))
+                              .ToList();
+
+                dataGridStoklar.DataSource = sonuc;
+                if (dataGridStoklar.Columns["Id"] != null)
+                    dataGridStoklar.Columns["Id"].Visible = false;
             }
         }
 
@@ -188,7 +228,7 @@ namespace FormStokKart
         {
             string aranan = txtAra.Text.Trim();
 
-            using (var db = new MuhasebeModel())
+            using (var db = new MuhasebeDBEntities2())
             {
                 var sonuc = db.StokKart
                               .Where(s => s.StokAdi.Contains(aranan) || s.StokKodu.Contains(aranan))
@@ -211,11 +251,6 @@ namespace FormStokKart
         {
             textBox.Text = placeholder;
             textBox.ForeColor = Color.Gray;
-        }
-
-        private void btnTemizle_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

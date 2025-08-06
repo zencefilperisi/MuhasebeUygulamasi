@@ -58,6 +58,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CariKart.cs">
+      <DependentUpon>MuhasebeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FormAnaMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAnaMenu.Designer.cs">
+      <DependentUpon>FormAnaMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCariKart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCariKart.Designer.cs">
+      <DependentUpon>FormCariKart.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGiris.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +108,12 @@
     <Compile Include="StokKart.cs">
       <DependentUpon>MuhasebeModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormAnaMenu.resx">
+      <DependentUpon>FormAnaMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCariKart.resx">
+      <DependentUpon>FormCariKart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormGiris.resx">
       <DependentUpon>FormGiris.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,13 +156,13 @@
   <ItemGroup>
     <Content Include="MuhasebeModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MuhasebeModel.Context.cs</LastGenOutput>
       <DependentUpon>MuhasebeModel.edmx</DependentUpon>
+      <LastGenOutput>MuhasebeModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="MuhasebeModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MuhasebeModel.cs</LastGenOutput>
       <DependentUpon>MuhasebeModel.edmx</DependentUpon>
+      <LastGenOutput>MuhasebeModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

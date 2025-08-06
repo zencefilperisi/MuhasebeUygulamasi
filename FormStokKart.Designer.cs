@@ -1,4 +1,4 @@
-﻿namespace FormStokKart
+﻿namespace FormGiris
 {
     partial class FormStokKart
     {
@@ -119,6 +119,8 @@
             // 
             // dataGridStoklar
             // 
+            this.dataGridStoklar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridStoklar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridStoklar.BackgroundColor = System.Drawing.Color.White;
             this.dataGridStoklar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -165,6 +167,7 @@
             this.txtAra.Name = "txtAra";
             this.txtAra.Size = new System.Drawing.Size(448, 28);
             this.txtAra.TabIndex = 10;
+            this.txtAra.TextChanged += new System.EventHandler(this.txtAra_TextChanged);
             // 
             // btnAra
             // 
@@ -247,7 +250,6 @@
             this.btnTemizle.TabIndex = 18;
             this.btnTemizle.Text = "Temizle";
             this.btnTemizle.UseVisualStyleBackColor = false;
-            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 
             // FormStokKart
             // 
