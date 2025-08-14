@@ -41,5 +41,16 @@
     <EntitySet Name="CariKart" EntityType="Self.CariKart" />
     <EntitySet Name="Kullanici" EntityType="Self.Kullanici" />
     <EntitySet Name="StokKart" EntityType="Self.StokKart" />
+    <EntitySet Name="Users" EntityType="MuhasebeDBModel.Users" />
   </EntityContainer>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KullaniciAdi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sifre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AdSoyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Yetki" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

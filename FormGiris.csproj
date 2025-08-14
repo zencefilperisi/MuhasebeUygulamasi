@@ -73,11 +73,23 @@
     <Compile Include="FormCariKart.Designer.cs">
       <DependentUpon>FormCariKart.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDovizKurlari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDovizKurlari.Designer.cs">
+      <DependentUpon>FormDovizKurlari.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGiris.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormGiris.Designer.cs">
       <DependentUpon>FormGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKullaniciYonetimi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKullaniciYonetimi.Designer.cs">
+      <DependentUpon>FormKullaniciYonetimi.cs</DependentUpon>
     </Compile>
     <Compile Include="FormStokKart.cs">
       <SubType>Form</SubType>
@@ -108,14 +120,23 @@
     <Compile Include="StokKart.cs">
       <DependentUpon>MuhasebeModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Users.cs">
+      <DependentUpon>MuhasebeModel.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormAnaMenu.resx">
       <DependentUpon>FormAnaMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCariKart.resx">
       <DependentUpon>FormCariKart.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDovizKurlari.resx">
+      <DependentUpon>FormDovizKurlari.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormGiris.resx">
       <DependentUpon>FormGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKullaniciYonetimi.resx">
+      <DependentUpon>FormKullaniciYonetimi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormStokKart.resx">
       <DependentUpon>FormStokKart.cs</DependentUpon>

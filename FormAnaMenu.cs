@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace FormGiris
 {
     public partial class FormAnaMenu : Form
     {
+        SqlConnection conn = new SqlConnection("Server=HATICE\\SQLEXPRESS;Database=MuhasebeDB;Trusted_Connection=True;");
         public FormAnaMenu()
         {
             InitializeComponent();
@@ -40,6 +42,21 @@ namespace FormGiris
         private void çıkışToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void ayarlarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormKullaniciYonetimi frm = new FormKullaniciYonetimi();
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+        private void dövizKurlarıToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormDovizKurlari dovizForm = new FormDovizKurlari();
+            dovizForm.MdiParent = this;
+            dovizForm.WindowState=FormWindowState.Maximized;
+            dovizForm.Show(); 
         }
     }
 }

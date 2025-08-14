@@ -143,5 +143,45 @@ namespace FormGiris.cs
                 MessageBox.Show("Lütfen silmek için bir satır seçin.");
             }
         }
+        private void AramaYap()
+        {
+            using (var db = new MuhasebeDBEntities2())
+            {
+                string aranan = txtAra.Text.Trim();
+
+                var sonuc = db.CariKart
+                              .Where(c => c.CariAdi.Contains(aranan) || c.CariKodu.Contains(aranan) ||
+                                          c.Telefon.Contains(aranan) || c.Email.Contains(aranan) ||
+                                          c.Adres.Contains(aranan))
+                              .ToList();
+
+                dataGridCariler.DataSource = sonuc;
+
+                if (dataGridCariler.Columns["Id"] != null)
+                    dataGridCariler.Columns["Id"].Visible = false;
+                // Satır ve sütunları otomatik boyutlandır
+                dataGridCariler.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridCariler.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
+                // Opsiyonel: tüm sütunları eşit dağıt
+                dataGridCariler.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                // Satır yüksekliğini minimum artır
+                dataGridCariler.RowTemplate.Height = 30;
+
+                // DataGridView’i yeniden çiz
+                dataGridCariler.Refresh();
+            }
+        }
+
+        private void txtAra_TextChanged(object sender, EventArgs e)
+        {
+            AramaYap();
+        }
+
+        private void btnAra_Click(object sender, EventArgs e)
+        {
+            AramaYap();
+        }
     }
 }

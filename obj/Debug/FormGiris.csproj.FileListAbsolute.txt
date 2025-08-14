@@ -1,5 +1,4 @@
 C:\Users\User\source\repos\FormGiris.cs\obj\Debug\FormGiris.csproj.AssemblyReference.cache
-C:\Users\User\source\repos\FormGiris.cs\obj\Debug\FormGiris.cs.exe.config
 C:\Users\User\source\repos\FormGiris.cs\obj\Debug\FormGiris.FormAnaMenu.resources
 C:\Users\User\source\repos\FormGiris.cs\obj\Debug\FormGiris.FormGiris.resources
 C:\Users\User\source\repos\FormGiris.cs\obj\Debug\FormGiris.FormStokKart.resources
@@ -17,3 +16,6 @@ C:\Users\User\source\repos\FormGiris.cs\obj\Debug\FormGiris.cs.FormCariKart.reso
 C:\Users\User\source\repos\FormGiris.cs\obj\Debug\FormGiris.csproj.Up2Date
 C:\Users\User\source\repos\FormGiris.cs\obj\Debug\FormGiris.cs.exe
 C:\Users\User\source\repos\FormGiris.cs\obj\Debug\FormGiris.cs.pdb
+C:\Users\User\source\repos\FormGiris.cs\obj\Debug\FormGiris.cs.FormDovizKurlari.resources
+C:\Users\User\source\repos\FormGiris.cs\obj\Debug\FormGiris.cs.FormKullaniciYonetimi.resources
+C:\Users\User\source\repos\FormGiris.cs\obj\Debug\FormGiris.cs.exe.config

@@ -65,8 +65,6 @@ namespace FormGiris
                 {
                     MessageBox.Show("Giriş başarılı!");
                     this.Hide();
-                    FormStokKart stok = new FormStokKart();
-                    stok.Show();
                 }
                 else
                 {

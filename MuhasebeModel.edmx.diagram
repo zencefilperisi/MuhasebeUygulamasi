@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="MuhasebeDBModel.CariKart" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MuhasebeDBModel.Kullanici" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MuhasebeDBModel.StokKart" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MuhasebeDBModel.Users" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true"/>
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

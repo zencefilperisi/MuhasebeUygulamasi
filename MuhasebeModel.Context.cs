@@ -28,5 +28,6 @@ namespace FormGiris.cs
         public virtual DbSet<CariKart> CariKart { get; set; }
         public virtual DbSet<Kullanici> Kullanici { get; set; }
         public virtual DbSet<StokKart> StokKart { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
     }
 }

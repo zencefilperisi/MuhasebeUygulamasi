@@ -43,6 +43,7 @@
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnAra = new System.Windows.Forms.Button();
+            this.txtAra = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCariler)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,6 +139,9 @@
             // 
             // dataGridCariler
             // 
+            this.dataGridCariler.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridCariler.BackgroundColor = System.Drawing.Color.White;
             this.dataGridCariler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridCariler.Location = new System.Drawing.Point(134, 273);
@@ -186,13 +190,24 @@
             // btnAra
             // 
             this.btnAra.BackColor = System.Drawing.Color.Lavender;
-            this.btnAra.Font = new System.Drawing.Font("Franklin Gothic Demi", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnAra.Location = new System.Drawing.Point(269, 59);
+            this.btnAra.Font = new System.Drawing.Font("Franklin Gothic Demi", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAra.Location = new System.Drawing.Point(587, 11);
             this.btnAra.Name = "btnAra";
-            this.btnAra.Size = new System.Drawing.Size(109, 46);
+            this.btnAra.Size = new System.Drawing.Size(37, 29);
             this.btnAra.TabIndex = 19;
             this.btnAra.Text = "Ara";
             this.btnAra.UseVisualStyleBackColor = false;
+            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
+            // 
+            // txtAra
+            // 
+            this.txtAra.BackColor = System.Drawing.Color.White;
+            this.txtAra.Font = new System.Drawing.Font("Franklin Gothic Demi", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtAra.Location = new System.Drawing.Point(133, 12);
+            this.txtAra.Name = "txtAra";
+            this.txtAra.Size = new System.Drawing.Size(448, 28);
+            this.txtAra.TabIndex = 20;
+            this.txtAra.TextChanged += new System.EventHandler(this.txtAra_TextChanged);
             // 
             // FormCariKart
             // 
@@ -200,6 +215,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(771, 450);
+            this.Controls.Add(this.txtAra);
             this.Controls.Add(this.btnAra);
             this.Controls.Add(this.btnSil);
             this.Controls.Add(this.btnGuncelle);
@@ -241,5 +257,6 @@
         private System.Windows.Forms.Button btnGuncelle;
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.Button btnAra;
+        private System.Windows.Forms.TextBox txtAra;
     }
 }
