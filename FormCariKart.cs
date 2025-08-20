@@ -163,14 +163,9 @@ namespace FormGiris.cs
                 dataGridCariler.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dataGridCariler.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
-                // Opsiyonel: tüm sütunları eşit dağıt
-                dataGridCariler.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-                // Satır yüksekliğini minimum artır
-                dataGridCariler.RowTemplate.Height = 30;
-
-                // DataGridView’i yeniden çiz
-                dataGridCariler.Refresh();
+                dataGridCariler.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // tüm sütunları eşit dağıt
+                dataGridCariler.RowTemplate.Height = 30; // Satır yüksekliğini minimum artır
+                dataGridCariler.Refresh(); // DataGridView’i yeniden çiz
             }
         }
 

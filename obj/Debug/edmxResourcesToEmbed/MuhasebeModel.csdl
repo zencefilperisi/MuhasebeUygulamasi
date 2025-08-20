@@ -42,6 +42,13 @@
     <EntitySet Name="Kullanici" EntityType="Self.Kullanici" />
     <EntitySet Name="StokKart" EntityType="Self.StokKart" />
     <EntitySet Name="Users" EntityType="MuhasebeDBModel.Users" />
+    <EntitySet Name="SatisFatura" EntityType="MuhasebeDBModel.SatisFatura" />
+    <EntitySet Name="Fis" EntityType="MuhasebeDBModel.Fis" />
+    <EntitySet Name="FisDetay" EntityType="MuhasebeDBModel.FisDetay" />
+    <AssociationSet Name="FK__FisDetay__FisId__18EBB532" Association="MuhasebeDBModel.FK__FisDetay__FisId__18EBB532">
+      <End Role="Fis" EntitySet="Fis" />
+      <End Role="FisDetay" EntitySet="FisDetay" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Users">
     <Key>
@@ -53,4 +60,54 @@
     <Property Name="AdSoyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Yetki" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
+  <EntityType Name="SatisFatura">
+    <Key>
+      <PropertyRef Name="FaturaId" />
+    </Key>
+    <Property Name="FaturaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FaturaNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CariKodu" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UrunKodu" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UrunAdi" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Miktar" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="BirimFiyat" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="Fis">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FisKodu" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cari" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="OdemeTuru" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="FisDetay" Relationship="MuhasebeDBModel.FK__FisDetay__FisId__18EBB532" FromRole="Fis" ToRole="FisDetay" />
+  </EntityType>
+  <EntityType Name="FisDetay">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FisId" Type="Int32" Nullable="false" />
+    <Property Name="UrunKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UrunAdi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Miktar" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="BirimFiyat" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Kdv" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
+    <Property Name="Toplam" Type="Decimal" Precision="38" Scale="5" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Fis" Relationship="MuhasebeDBModel.FK__FisDetay__FisId__18EBB532" FromRole="FisDetay" ToRole="Fis" />
+  </EntityType>
+  <Association Name="FK__FisDetay__FisId__18EBB532">
+    <End Type="MuhasebeDBModel.Fis" Role="Fis" Multiplicity="1" />
+    <End Type="MuhasebeDBModel.FisDetay" Role="FisDetay" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fis">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FisDetay">
+        <PropertyRef Name="FisId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

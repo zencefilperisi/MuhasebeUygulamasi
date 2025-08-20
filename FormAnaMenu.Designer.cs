@@ -26,7 +26,11 @@
             this.kullanıcıYönetimiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dövizKurlarıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dövizKurlarıToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.faturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.satışFaturasıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bilgiFişiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.çıkışToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fişDetayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -38,6 +42,7 @@
             this.cariKartlariToolStripMenuItem,
             this.ayarlarToolStripMenuItem,
             this.dövizKurlarıToolStripMenuItem,
+            this.faturaToolStripMenuItem,
             this.çıkışToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -52,7 +57,6 @@
             this.stokKartlaritoolStripMenuItem1.Name = "stokKartlaritoolStripMenuItem1";
             this.stokKartlaritoolStripMenuItem1.Size = new System.Drawing.Size(52, 24);
             this.stokKartlaritoolStripMenuItem1.Text = "Stok";
-            // Üst menü Click event kaldırıldı
             // 
             // stokKartıToolStripMenuItem
             // 
@@ -68,7 +72,6 @@
             this.cariKartlariToolStripMenuItem.Name = "cariKartlariToolStripMenuItem";
             this.cariKartlariToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.cariKartlariToolStripMenuItem.Text = "Cari";
-            // Üst menü Click event kaldırıldı
             // 
             // cariKartlarıToolStripMenuItem
             // 
@@ -84,7 +87,6 @@
             this.ayarlarToolStripMenuItem.Name = "ayarlarToolStripMenuItem";
             this.ayarlarToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
             this.ayarlarToolStripMenuItem.Text = "Ayarlar";
-            // Üst menü Click event kaldırıldı
             // 
             // kullanıcıYönetimiToolStripMenuItem
             // 
@@ -100,7 +102,6 @@
             this.dövizKurlarıToolStripMenuItem.Name = "dövizKurlarıToolStripMenuItem";
             this.dövizKurlarıToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.dövizKurlarıToolStripMenuItem.Text = "Döviz ";
-            // Üst menü Click event kaldırıldı
             // 
             // dövizKurlarıToolStripMenuItem1
             // 
@@ -109,12 +110,43 @@
             this.dövizKurlarıToolStripMenuItem1.Text = "Döviz Kurları";
             this.dövizKurlarıToolStripMenuItem1.Click += new System.EventHandler(this.dövizKurlarıToolStripMenuItem1_Click);
             // 
+            // faturaToolStripMenuItem
+            // 
+            this.faturaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.satışFaturasıToolStripMenuItem,
+            this.bilgiFişiToolStripMenuItem,
+            this.fişDetayToolStripMenuItem});
+            this.faturaToolStripMenuItem.Name = "faturaToolStripMenuItem";
+            this.faturaToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
+            this.faturaToolStripMenuItem.Text = "Fatura";
+            // 
+            // satışFaturasıToolStripMenuItem
+            // 
+            this.satışFaturasıToolStripMenuItem.Name = "satışFaturasıToolStripMenuItem";
+            this.satışFaturasıToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.satışFaturasıToolStripMenuItem.Text = "Satış Faturası";
+            this.satışFaturasıToolStripMenuItem.Click += new System.EventHandler(this.satışFaturasıToolStripMenuItem_Click);
+            // 
+            // bilgiFişiToolStripMenuItem
+            // 
+            this.bilgiFişiToolStripMenuItem.Name = "bilgiFişiToolStripMenuItem";
+            this.bilgiFişiToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.bilgiFişiToolStripMenuItem.Text = "Bilgi Fişi";
+            this.bilgiFişiToolStripMenuItem.Click += new System.EventHandler(this.bilgiFişiToolStripMenuItem_Click);
+            // 
             // çıkışToolStripMenuItem
             // 
             this.çıkışToolStripMenuItem.Name = "çıkışToolStripMenuItem";
             this.çıkışToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.çıkışToolStripMenuItem.Text = "Çıkış";
             this.çıkışToolStripMenuItem.Click += new System.EventHandler(this.çıkışToolStripMenuItem_Click);
+            // 
+            // fişDetayToolStripMenuItem
+            // 
+            this.fişDetayToolStripMenuItem.Name = "fişDetayToolStripMenuItem";
+            this.fişDetayToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.fişDetayToolStripMenuItem.Text = "Fiş Detay";
+            this.fişDetayToolStripMenuItem.Click += new System.EventHandler(this.fişDetayToolStripMenuItem_Click);
             // 
             // FormAnaMenu
             // 
@@ -131,6 +163,7 @@
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
@@ -145,5 +178,9 @@
         private System.Windows.Forms.ToolStripMenuItem dövizKurlarıToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dövizKurlarıToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem çıkışToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem faturaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem satışFaturasıToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bilgiFişiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fişDetayToolStripMenuItem;
     }
 }
