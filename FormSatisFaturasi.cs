@@ -12,8 +12,6 @@ namespace FormGiris.cs
 {
     public partial class FormSatisFaturasi : Form
     {
-        private Fis secilenFis; // Seçilen fişi tutacak
-
         private MuhasebeDBEntities2 db = new MuhasebeDBEntities2();
         private SatisFatura secilenFatura;
         public FormSatisFaturasi()

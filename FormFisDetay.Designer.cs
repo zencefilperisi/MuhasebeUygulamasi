@@ -257,7 +257,6 @@
             this.Controls.Add(this.txtUrunKodu);
             this.Name = "FormFisDetay";
             this.Text = "FormFisDetay";
-            this.Load += new System.EventHandler(this.FormFisDetay_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFisDetay)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

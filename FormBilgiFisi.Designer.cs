@@ -136,7 +136,6 @@
             this.dgvFis.RowTemplate.Height = 24;
             this.dgvFis.Size = new System.Drawing.Size(489, 150);
             this.dgvFis.TabIndex = 17;
-            this.dgvFis.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFis_CellClick);
             // 
             // btnEkle
             // 
@@ -172,7 +171,6 @@
             this.btnTemizle.TabIndex = 26;
             this.btnTemizle.Text = "Temizle";
             this.btnTemizle.UseVisualStyleBackColor = false;
-            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 
             // txtAraToplam
             // 

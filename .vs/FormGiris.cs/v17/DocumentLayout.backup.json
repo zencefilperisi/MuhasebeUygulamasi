@@ -3,36 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\FormGiris.cs\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|C:\\Users\\User\\source\\repos\\FormGiris.cs\\formbilgifisi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|solutionrelative:formbilgifisi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|c:\\users\\user\\source\\repos\\formgiris.cs\\formanamenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|solutionrelative:formanamenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|c:\\users\\user\\source\\repos\\formgiris.cs\\formbilgifisi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|solutionrelative:formbilgifisi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|c:\\users\\user\\source\\repos\\formgiris.cs\\formbilgifisi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|solutionrelative:formbilgifisi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|c:\\users\\user\\source\\repos\\formgiris.cs\\formfisdetay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|C:\\Users\\User\\source\\repos\\FormGiris.cs\\formfisdetay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|solutionrelative:formfisdetay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|c:\\users\\user\\source\\repos\\formgiris.cs\\formfisdetay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|c:\\users\\user\\source\\repos\\formgiris.cs\\formfisdetay.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|solutionrelative:formfisdetay.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|C:\\Users\\User\\source\\repos\\FormGiris.cs\\formsatisfaturasi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|solutionrelative:formsatisfaturasi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|C:\\Users\\User\\source\\repos\\FormGiris.cs\\formfisdetay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|solutionrelative:formfisdetay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|c:\\users\\user\\source\\repos\\formgiris.cs\\formanamenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|c:\\users\\user\\source\\repos\\formgiris.cs\\muhasebemodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|solutionrelative:muhasebemodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|C:\\Users\\User\\source\\repos\\FormGiris.cs\\formbilgifisi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|solutionrelative:formbilgifisi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|C:\\Users\\User\\source\\repos\\FormGiris.cs\\formanamenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|solutionrelative:formanamenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|C:\\Users\\User\\source\\repos\\FormGiris.cs\\formsatisfaturasi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|solutionrelative:formsatisfaturasi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|C:\\Users\\User\\source\\repos\\FormGiris.cs\\formsatisfaturasi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{871FCEBB-E65D-432B-9B90-68BA57D549A8}|FormGiris.csproj|solutionrelative:formsatisfaturasi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,58 +58,96 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "FormFisDetay.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\FormGiris.cs\\FormFisDetay.Designer.cs",
+              "RelativeDocumentMoniker": "FormFisDetay.Designer.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\FormGiris.cs\\FormFisDetay.Designer.cs",
+              "RelativeToolTip": "FormFisDetay.Designer.cs",
+              "ViewState": "AgIAAPwAAAAAAAAAAAAEwAMBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T07:17:59.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "FormAnaMenu.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\FormGiris.cs\\FormAnaMenu.cs",
               "RelativeDocumentMoniker": "FormAnaMenu.cs",
               "ToolTip": "C:\\Users\\User\\source\\repos\\FormGiris.cs\\FormAnaMenu.cs*",
               "RelativeToolTip": "FormAnaMenu.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFoAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAADcAAAAAAAAAAAAqwG0AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-20T11:42:17.917Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "FormBilgiFisi.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\FormGiris.cs\\FormBilgiFisi.cs",
               "RelativeDocumentMoniker": "FormBilgiFisi.cs",
               "ToolTip": "C:\\Users\\User\\source\\repos\\FormGiris.cs\\FormBilgiFisi.cs*",
               "RelativeToolTip": "FormBilgiFisi.cs*",
-              "ViewState": "AgIAACAAAAAAAAAAAAAgwDsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-20T06:58:52.632Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "FormFisDetay.cs [Tasar\u0131m]",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\FormGiris.cs\\FormFisDetay.cs",
               "RelativeDocumentMoniker": "FormFisDetay.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\FormGiris.cs\\FormFisDetay.cs [Tasar\u0131m]*",
-              "RelativeToolTip": "FormFisDetay.cs [Tasar\u0131m]*",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\FormGiris.cs\\FormFisDetay.cs [Tasar\u0131m]",
+              "RelativeToolTip": "FormFisDetay.cs [Tasar\u0131m]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-20T10:40:45.238Z",
               "EditorCaption": " [Tasar\u0131m]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "FormFisDetay.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\FormGiris.cs\\FormFisDetay.cs",
               "RelativeDocumentMoniker": "FormFisDetay.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\FormGiris.cs\\FormFisDetay.cs*",
-              "RelativeToolTip": "FormFisDetay.cs*",
-              "ViewState": "AgIAAOIAAAAAAAAAAAAkwAYBAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\FormGiris.cs\\FormFisDetay.cs",
+              "RelativeToolTip": "FormFisDetay.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-20T11:06:36.874Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
+              "Title": "FormSatisFaturasi.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\FormGiris.cs\\FormSatisFaturasi.cs",
+              "RelativeDocumentMoniker": "FormSatisFaturasi.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\FormGiris.cs\\FormSatisFaturasi.cs",
+              "RelativeToolTip": "FormSatisFaturasi.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T10:06:55.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MuhasebeModel.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\FormGiris.cs\\MuhasebeModel.edmx",
+              "RelativeDocumentMoniker": "MuhasebeModel.edmx",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\FormGiris.cs\\MuhasebeModel.edmx [Diagram1]",
+              "RelativeToolTip": "MuhasebeModel.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2025-08-21T06:31:04.447Z",
+              "EditorCaption": " [Diagram1]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "FormBilgiFisi.cs [Tasar\u0131m]",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\FormGiris.cs\\FormBilgiFisi.cs",
               "RelativeDocumentMoniker": "FormBilgiFisi.cs",
@@ -113,7 +159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "FormAnaMenu.cs [Tasar\u0131m]",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\FormGiris.cs\\FormAnaMenu.cs",
               "RelativeDocumentMoniker": "FormAnaMenu.cs",
@@ -125,20 +171,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FormSatisFaturasi.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\FormGiris.cs\\FormSatisFaturasi.cs",
-              "RelativeDocumentMoniker": "FormSatisFaturasi.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\FormGiris.cs\\FormSatisFaturasi.cs",
-              "RelativeToolTip": "FormSatisFaturasi.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAswA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T10:06:55.946Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "FormSatisFaturasi.cs [Tasar\u0131m]",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\FormGiris.cs\\FormSatisFaturasi.cs",
               "RelativeDocumentMoniker": "FormSatisFaturasi.cs",

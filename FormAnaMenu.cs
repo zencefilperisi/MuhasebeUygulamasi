@@ -14,8 +14,6 @@ namespace FormGiris
 {
     public partial class FormAnaMenu : Form
     {
-        private Fis secilenFis = null;
-
         SqlConnection conn = new SqlConnection("Server=HATICE\\SQLEXPRESS;Database=MuhasebeDB;Trusted_Connection=True;");
         public FormAnaMenu()
         {
@@ -79,8 +77,8 @@ namespace FormGiris
         private void fişDetayToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var formBilgiFisi = this.MdiChildren
-                             .OfType<FormBilgiFisi>()
-                             .FirstOrDefault();
+                     .OfType<FormBilgiFisi>()
+                     .FirstOrDefault();
 
             if (formBilgiFisi == null)
             {
@@ -88,19 +86,22 @@ namespace FormGiris
                 return;
             }
 
-            if (formBilgiFisi.SecilenFis == null)  // SecilenFis property olarak FormBilgiFisi içinde public yapılmalı
+            // SecilenFis varsa al, yoksa listenin ilk elemanını al
+            var fis = formBilgiFisi.GetSecilenVeyaIlkFis();
+
+            if (fis == null)
             {
-                MessageBox.Show("Lütfen önce bir fiş seçin.");
+                MessageBox.Show("Hiç fiş bulunamadı.");
                 return;
             }
 
-            var frmDetay = new FormFisDetay(formBilgiFisi.SecilenFis.Id)
+            var frmDetay = new FormFisDetay(fis.Id)
             {
                 MdiParent = this,
                 WindowState = FormWindowState.Maximized
             };
 
-            // Callback ile toplamları bilgi fişi formuna bildir
+            // Parent forma callback ile toplamları bildir
             frmDetay.ToplamlarDegisti = (ara, kdv, genel) =>
             {
                 formBilgiFisi.AraToplamGuncelle(ara, kdv, genel);
