@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -115,13 +115,9 @@ namespace FormGiris.cs
 
         private void btnBilgiFisi_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtFaturaNo.Text))
-            {
-                MessageBox.Show("Önce bir fatura seçin veya ekleyin!");
-                return;
-            }
-
-            using (FormBilgiFisi frmBilgiFisi = new FormBilgiFisi(txtFaturaNo.Text))
+            using (FormBilgiFisi frmBilgiFisi = secilenFatura != null
+                ? new FormBilgiFisi(secilenFatura)
+                : new FormBilgiFisi(txtFaturaNo.Text))
             {
                 frmBilgiFisi.ShowDialog();
             }

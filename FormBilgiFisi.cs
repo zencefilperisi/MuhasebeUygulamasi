@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +16,11 @@ namespace FormGiris.cs
         private string FisKoduSecilen;
         private List<FisAll> FisAllListesi = new List<FisAll>();
         public FisAll SecilenFisAll { get; private set; }
+
+        public FormBilgiFisi(SatisFatura fatura)
+            : this(fatura != null ? fatura.FaturaNo : string.Empty)
+        {
+        }
 
         public FormBilgiFisi(string fisKodu)
         {
