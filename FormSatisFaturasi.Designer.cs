@@ -1,4 +1,4 @@
-﻿namespace FormGiris.cs
+namespace FormGiris.cs
 {
     partial class FormSatisFaturasi
     {
@@ -249,6 +249,7 @@
             this.btnBilgiFisi.TabIndex = 26;
             this.btnBilgiFisi.Text = "Bilgi Fişi";
             this.btnBilgiFisi.UseVisualStyleBackColor = false;
+            this.btnBilgiFisi.Click += new System.EventHandler(this.btnBilgiFisi_Click);
             // 
             // FormSatisFaturasi
             // 
