@@ -65,49 +65,5 @@ namespace FormGiris
             satisFormu.WindowState= FormWindowState.Maximized;
             satisFormu.Show();
         }
-
-        private void bilgiFişiToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormBilgiFisi fisFormu = new FormBilgiFisi();
-            fisFormu.MdiParent = this;
-            fisFormu.WindowState= FormWindowState.Maximized;
-            fisFormu.Show();
-        }
-
-        private void fişDetayToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var formBilgiFisi = this.MdiChildren
-                     .OfType<FormBilgiFisi>()
-                     .FirstOrDefault();
-
-            if (formBilgiFisi == null)
-            {
-                MessageBox.Show("Önce Bilgi Fişi formunu açın.");
-                return;
-            }
-
-            // SecilenFis varsa al, yoksa listenin ilk elemanını al
-            var fis = formBilgiFisi.GetSecilenVeyaIlkFis();
-
-            if (fis == null)
-            {
-                MessageBox.Show("Hiç fiş bulunamadı.");
-                return;
-            }
-
-            var frmDetay = new FormFisDetay(fis.Id)
-            {
-                MdiParent = this,
-                WindowState = FormWindowState.Maximized
-            };
-
-            // Parent forma callback ile toplamları bildir
-            frmDetay.ToplamlarDegisti = (ara, kdv, genel) =>
-            {
-                formBilgiFisi.AraToplamGuncelle(ara, kdv, genel);
-            };
-
-            frmDetay.Show();
-        }
     }
 }

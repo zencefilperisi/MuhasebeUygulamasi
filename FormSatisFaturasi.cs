@@ -14,9 +14,37 @@ namespace FormGiris.cs
     {
         private MuhasebeDBEntities2 db = new MuhasebeDBEntities2();
         private SatisFatura secilenFatura;
+
         public FormSatisFaturasi()
         {
             InitializeComponent();
+        }
+
+        private void FormSatisFaturasi_Load(object sender, EventArgs e)
+        {
+            Listele();
+        }
+
+        private void Listele()
+        {
+            var faturalar = db.SatisFatura.ToList();
+            dgvFaturaDetay.DataSource = faturalar;
+        }
+
+        private void dgvFaturaDetay_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                secilenFatura = (SatisFatura)dgvFaturaDetay.Rows[e.RowIndex].DataBoundItem;
+
+                txtFaturaNo.Text = secilenFatura.FaturaNo;
+                txtCariKodu.Text = secilenFatura.CariKodu;
+                txtUrunKodu.Text = secilenFatura.UrunKodu;
+                txtUrunAdi.Text = secilenFatura.UrunAdi;
+                txtMiktar.Text = secilenFatura.Miktar.ToString();
+                txtBirimFiyat.Text = secilenFatura.BirimFiyat.ToString();
+                dtpTarih.Value = secilenFatura.Tarih;
+            }
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
@@ -34,10 +62,9 @@ namespace FormGiris.cs
 
             db.SatisFatura.Add(yeniFatura);
             db.SaveChanges();
-
             MessageBox.Show("Fatura başarıyla eklendi!");
             Temizle();
-            Listele(); // DataGridView güncellensin
+            Listele();
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
@@ -55,7 +82,7 @@ namespace FormGiris.cs
                 db.SaveChanges();
                 MessageBox.Show("Fatura başarıyla güncellendi!");
                 Temizle();
-                Listele(); // Güncelleme sonrası listeyi yenile
+                Listele();
             }
             else
             {
@@ -63,10 +90,6 @@ namespace FormGiris.cs
             }
         }
 
-        private void btnTemizle_Click(object sender, EventArgs e)
-        {
-            Temizle();
-        }
         private void Temizle()
         {
             txtFaturaNo.Clear();
@@ -78,30 +101,29 @@ namespace FormGiris.cs
             dtpTarih.Value = DateTime.Now;
             secilenFatura = null;
         }
-        private void Listele()
+        private void btnCariSec_Click(object sender, EventArgs e)
         {
-            var faturalar = db.SatisFatura.ToList();
-            dgvFaturaDetay.DataSource = faturalar;
-        }
-
-        private void FormSatisFaturasi_Load(object sender, EventArgs e)
-        {
-            Listele();
-        }
-
-        private void dgvFaturaDetay_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
+            using (FormCariKart frm = new FormCariKart())
             {
-                secilenFatura = (SatisFatura)dgvFaturaDetay.Rows[e.RowIndex].DataBoundItem;
+                if (frm.ShowDialog() == DialogResult.OK && frm.SecilenCari != null)
+                {
+                    txtCariKodu.Text = frm.SecilenCari.CariKodu;
+                    // txtCariAdi.Text = frm.SecilenCari.CariAdi; // opsiyonel
+                }
+            }
+        }
 
-                txtFaturaNo.Text = secilenFatura.FaturaNo;
-                txtCariKodu.Text = secilenFatura.CariKodu;
-                txtUrunKodu.Text = secilenFatura.UrunKodu;
-                txtUrunAdi.Text = secilenFatura.UrunAdi;
-                txtMiktar.Text = secilenFatura.Miktar.ToString();
-                txtBirimFiyat.Text = secilenFatura.BirimFiyat.ToString();
-                dtpTarih.Value = secilenFatura.Tarih;
+        private void btnBilgiFisi_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtFaturaNo.Text))
+            {
+                MessageBox.Show("Önce bir fatura seçin veya ekleyin!");
+                return;
+            }
+
+            using (FormBilgiFisi frmBilgiFisi = new FormBilgiFisi(txtFaturaNo.Text))
+            {
+                frmBilgiFisi.ShowDialog();
             }
         }
     }

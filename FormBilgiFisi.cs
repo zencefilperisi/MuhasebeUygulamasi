@@ -13,18 +13,14 @@ namespace FormGiris.cs
     public partial class FormBilgiFisi : Form
     {
         private MuhasebeDBEntities2 db = new MuhasebeDBEntities2();
+        private string FisKoduSecilen;
+        private List<FisAll> FisAllListesi = new List<FisAll>();
+        public FisAll SecilenFisAll { get; private set; }
 
-        public Fis SecilenFis { get; private set; }
-        public Fis GetSecilenVeyaIlkFis()
-        {
-            if (SecilenFis != null) return SecilenFis;
-            return FisListesi.FirstOrDefault();
-        }
-        private List<Fis> FisListesi = new List<Fis>();
-
-        public FormBilgiFisi()
+        public FormBilgiFisi(string fisKodu)
         {
             InitializeComponent();
+            FisKoduSecilen = fisKodu;
         }
 
         private void FormBilgiFisi_Load(object sender, EventArgs e)
@@ -34,135 +30,67 @@ namespace FormGiris.cs
 
         private void Listele()
         {
-            FisListesi = db.Fis.ToList();
+            FisAllListesi = db.FisAll.Where(f => f.FisKodu == FisKoduSecilen).ToList();
 
-            var kaynak = FisListesi
-                         .Select(f => new
-                         {
-                             f.Id,
-                             f.FisKodu,
-                             f.Cari,
-                             f.OdemeTuru,
-                             f.Tarih
-                         })
-                         .ToList();
-
-            dgvFis.DataSource = kaynak;
-
-            if (dgvFis.Columns["Id"] != null)
-                dgvFis.Columns["Id"].Visible = false;
-
-            dgvFis.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvFis.RowTemplate.Height = 25;
-
-            // Otomatik olarak ilk fişi seç
-            if (FisListesi.Count > 0)
+            var kaynak = FisAllListesi.Select(f => new
             {
-                SecilenFis = FisListesi[0];
-                ToplamlariGuncelle();
+                f.Id,
+                f.FisKodu,
+                f.Cari,
+                f.OdemeTuru,
+                f.Tarih,
+                f.UrunKodu,
+                f.UrunAdi,
+                f.Miktar,
+                f.BirimFiyat,
+                f.Kdv,
+                f.Toplam
+            }).ToList();
+
+            dgvFisAll.DataSource = kaynak;
+
+            if (dgvFisAll.Columns["Id"] != null)
+                dgvFisAll.Columns["Id"].Visible = false;
+
+            dgvFisAll.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvFisAll.RowTemplate.Height = 25;
+
+            if (FisAllListesi.Count > 0)
+            {
+                SecilenFisAll = FisAllListesi[0];
+                ToplamlariGuncelle(SecilenFisAll.FisKodu);
             }
         }
 
-        public void AraToplamGuncelle(decimal ara, decimal kdv, decimal genel)
+        private void ToplamlariGuncelle(string fisKodu)
         {
+            var ara = FisAllListesi.Where(f => f.FisKodu == fisKodu)
+                                    .Sum(f => (decimal?)(f.Miktar * f.BirimFiyat)) ?? 0;
+            var kdv = FisAllListesi.Where(f => f.FisKodu == fisKodu)
+                                    .Sum(f => (decimal?)(f.Miktar * f.BirimFiyat * f.Kdv / 100)) ?? 0;
+            var genel = FisAllListesi.Where(f => f.FisKodu == fisKodu)
+                                      .Sum(f => (decimal?)f.Toplam) ?? 0;
+
             txtAraToplam.Text = ara.ToString("C2");
             txtKdvToplam.Text = kdv.ToString("C2");
             txtGenelToplam.Text = genel.ToString("C2");
         }
 
-        private void ToplamlariGuncelle()
+        private void dgvFisAll_SelectionChanged(object sender, EventArgs e)
         {
-            if (SecilenFis == null) return;
+            if (dgvFisAll.CurrentRow == null) return;
 
-            var ara = db.FisDetay.Where(d => d.FisId == SecilenFis.Id)
-                                  .Sum(d => (decimal?)(d.Miktar * d.BirimFiyat)) ?? 0;
-            var kdv = db.FisDetay.Where(d => d.FisId == SecilenFis.Id)
-                                  .Sum(d => (decimal?)(d.Miktar * d.BirimFiyat * d.Kdv / 100)) ?? 0;
-            var genel = db.FisDetay.Where(d => d.FisId == SecilenFis.Id)
-                                    .Sum(d => (decimal?)d.Toplam) ?? 0;
+            int id = (int)dgvFisAll.CurrentRow.Cells["Id"].Value;
+            SecilenFisAll = FisAllListesi.FirstOrDefault(f => f.Id == id);
 
-            AraToplamGuncelle(ara, kdv, genel);
-        }
-
-        private void btnEkle_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtFisKodu.Text) ||
-                string.IsNullOrWhiteSpace(txtCari.Text) ||
-                string.IsNullOrWhiteSpace(txtOdemeTuru.Text))
+            if (SecilenFisAll != null)
             {
-                MessageBox.Show("Lütfen gerekli alanları doldurun!");
-                return;
+                txtFisKodu.Text = SecilenFisAll.FisKodu;
+                txtCari.Text = SecilenFisAll.Cari;
+                txtOdemeTuru.Text = SecilenFisAll.OdemeTuru;
+                dtpTarih.Value = SecilenFisAll.Tarih;
+                ToplamlariGuncelle(SecilenFisAll.FisKodu);
             }
-
-            var yeniFis = new Fis
-            {
-                FisKodu = txtFisKodu.Text,
-                Cari = txtCari.Text,
-                OdemeTuru = txtOdemeTuru.Text,
-                Tarih = dtpTarih.Value
-            };
-
-            db.Fis.Add(yeniFis);
-            db.SaveChanges();
-
-            SecilenFis = yeniFis;
-            Listele();
-            Temizle();
-            MessageBox.Show("Fis başarıyla eklendi!");
-        }
-
-        private void btnKaydet_Click(object sender, EventArgs e)
-        {
-            if (SecilenFis != null)
-            {
-                SecilenFis.FisKodu = txtFisKodu.Text;
-                SecilenFis.Cari = txtCari.Text;
-                SecilenFis.OdemeTuru = txtOdemeTuru.Text;
-                SecilenFis.Tarih = dtpTarih.Value;
-
-                db.SaveChanges();
-                Listele();
-                MessageBox.Show("Fis başarıyla güncellendi!");
-            }
-            else
-            {
-                MessageBox.Show("Lütfen önce bir fiş seçin.");
-            }
-        }
-
-        private void Temizle()
-        {
-            txtFisKodu.Clear();
-            txtCari.Clear();
-            txtOdemeTuru.Clear();
-            txtAraToplam.Clear();
-            txtKdvToplam.Clear();
-            txtGenelToplam.Clear();
-            dtpTarih.Value = DateTime.Now;
-            SecilenFis = null;
-        }
-
-        private void fişDetayToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (SecilenFis == null)
-            {
-                MessageBox.Show("Önce bir fiş oluşturun.");
-                return;
-            }
-
-            var frmDetay = new FormFisDetay(SecilenFis.Id)
-            {
-                MdiParent = this,
-                WindowState = FormWindowState.Maximized
-            };
-
-            frmDetay.ToplamlarDegisti = (ara, kdv, genel) =>
-            {
-                AraToplamGuncelle(ara, kdv, genel);
-            };
-
-            frmDetay.Show();
         }
     }
 }
-

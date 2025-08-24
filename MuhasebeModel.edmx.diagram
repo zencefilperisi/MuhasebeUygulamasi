@@ -5,14 +5,12 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="8eee81d6f73f44d6b45e4cffcf4966e1" Name="Diagram1">
-        <EntityTypeShape EntityType="MuhasebeDBModel.CariKart" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MuhasebeDBModel.Kullanici" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MuhasebeDBModel.StokKart" Width="1.5" PointX="4.625" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MuhasebeDBModel.Users" Width="1.5" PointX="6.375" PointY="0.75" IsExpanded="true"/>
-        <EntityTypeShape EntityType="MuhasebeDBModel.SatisFatura" Width="1.5" PointX="8.25" PointY="0.75" />
-        <EntityTypeShape EntityType="MuhasebeDBModel.Fis" Width="1.5" PointX="0.75" PointY="4.125" />
-        <EntityTypeShape EntityType="MuhasebeDBModel.FisDetay" Width="1.5" PointX="3" PointY="3.875" />
-        <AssociationConnector Association="MuhasebeDBModel.FK__FisDetay__FisId__18EBB532" />
+        <EntityTypeShape EntityType="MuhasebeDBModel.CariKart" Width="1.5" PointX="0.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MuhasebeDBModel.Kullanici" Width="1.5" PointX="2.125" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MuhasebeDBModel.StokKart" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MuhasebeDBModel.Users" Width="1.5" PointX="5.375" PointY="0.75" IsExpanded="true"/>
+        <EntityTypeShape EntityType="MuhasebeDBModel.SatisFatura" Width="1.5" PointX="7" PointY="0.75" />
+        <EntityTypeShape EntityType="MuhasebeDBModel.FisAll" Width="1.5" PointX="8.625" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

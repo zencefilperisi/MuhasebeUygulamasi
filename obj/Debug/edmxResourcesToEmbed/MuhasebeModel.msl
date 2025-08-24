@@ -66,27 +66,19 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Fis">
-      <EntityTypeMapping TypeName="MuhasebeDBModel.Fis">
-        <MappingFragment StoreEntitySet="Fis">
-          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
-          <ScalarProperty Name="OdemeTuru" ColumnName="OdemeTuru" />
-          <ScalarProperty Name="Cari" ColumnName="Cari" />
-          <ScalarProperty Name="FisKodu" ColumnName="FisKodu" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="FisDetay">
-      <EntityTypeMapping TypeName="MuhasebeDBModel.FisDetay">
-        <MappingFragment StoreEntitySet="FisDetay">
+    <EntitySetMapping Name="FisAll">
+      <EntityTypeMapping TypeName="MuhasebeDBModel.FisAll">
+        <MappingFragment StoreEntitySet="FisAll">
           <ScalarProperty Name="Toplam" ColumnName="Toplam" />
           <ScalarProperty Name="Kdv" ColumnName="Kdv" />
           <ScalarProperty Name="BirimFiyat" ColumnName="BirimFiyat" />
           <ScalarProperty Name="Miktar" ColumnName="Miktar" />
           <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
           <ScalarProperty Name="UrunKodu" ColumnName="UrunKodu" />
-          <ScalarProperty Name="FisId" ColumnName="FisId" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="OdemeTuru" ColumnName="OdemeTuru" />
+          <ScalarProperty Name="Cari" ColumnName="Cari" />
+          <ScalarProperty Name="FisKodu" ColumnName="FisKodu" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>

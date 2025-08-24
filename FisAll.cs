@@ -12,17 +12,18 @@ namespace FormGiris.cs
     using System;
     using System.Collections.Generic;
     
-    public partial class FisDetay
+    public partial class FisAll
     {
         public int Id { get; set; }
-        public int FisId { get; set; }
+        public string FisKodu { get; set; }
+        public string Cari { get; set; }
+        public string OdemeTuru { get; set; }
+        public System.DateTime Tarih { get; set; }
         public string UrunKodu { get; set; }
         public string UrunAdi { get; set; }
         public decimal Miktar { get; set; }
         public decimal BirimFiyat { get; set; }
         public decimal Kdv { get; set; }
         public Nullable<decimal> Toplam { get; set; }
-    
-        public virtual Fis Fis { get; set; }
     }
 }

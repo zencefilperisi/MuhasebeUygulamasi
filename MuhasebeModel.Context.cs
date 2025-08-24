@@ -30,7 +30,6 @@ namespace FormGiris.cs
         public virtual DbSet<StokKart> StokKart { get; set; }
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<SatisFatura> SatisFatura { get; set; }
-        public virtual DbSet<Fis> Fis { get; set; }
-        public virtual DbSet<FisDetay> FisDetay { get; set; }
+        public virtual DbSet<FisAll> FisAll { get; set; }
     }
 }

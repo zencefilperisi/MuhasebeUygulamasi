@@ -28,9 +28,7 @@
             this.dövizKurlarıToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.faturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.satışFaturasıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bilgiFişiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.çıkışToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fişDetayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,9 +111,7 @@
             // faturaToolStripMenuItem
             // 
             this.faturaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.satışFaturasıToolStripMenuItem,
-            this.bilgiFişiToolStripMenuItem,
-            this.fişDetayToolStripMenuItem});
+            this.satışFaturasıToolStripMenuItem});
             this.faturaToolStripMenuItem.Name = "faturaToolStripMenuItem";
             this.faturaToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
             this.faturaToolStripMenuItem.Text = "Fatura";
@@ -127,26 +123,12 @@
             this.satışFaturasıToolStripMenuItem.Text = "Satış Faturası";
             this.satışFaturasıToolStripMenuItem.Click += new System.EventHandler(this.satışFaturasıToolStripMenuItem_Click);
             // 
-            // bilgiFişiToolStripMenuItem
-            // 
-            this.bilgiFişiToolStripMenuItem.Name = "bilgiFişiToolStripMenuItem";
-            this.bilgiFişiToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.bilgiFişiToolStripMenuItem.Text = "Bilgi Fişi";
-            this.bilgiFişiToolStripMenuItem.Click += new System.EventHandler(this.bilgiFişiToolStripMenuItem_Click);
-            // 
             // çıkışToolStripMenuItem
             // 
             this.çıkışToolStripMenuItem.Name = "çıkışToolStripMenuItem";
             this.çıkışToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.çıkışToolStripMenuItem.Text = "Çıkış";
             this.çıkışToolStripMenuItem.Click += new System.EventHandler(this.çıkışToolStripMenuItem_Click);
-            // 
-            // fişDetayToolStripMenuItem
-            // 
-            this.fişDetayToolStripMenuItem.Name = "fişDetayToolStripMenuItem";
-            this.fişDetayToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.fişDetayToolStripMenuItem.Text = "Fiş Detay";
-            this.fişDetayToolStripMenuItem.Click += new System.EventHandler(this.fişDetayToolStripMenuItem_Click);
             // 
             // FormAnaMenu
             // 
@@ -180,7 +162,5 @@
         private System.Windows.Forms.ToolStripMenuItem çıkışToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem faturaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem satışFaturasıToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bilgiFişiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fişDetayToolStripMenuItem;
     }
 }

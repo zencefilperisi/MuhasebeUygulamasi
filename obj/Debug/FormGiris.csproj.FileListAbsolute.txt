@@ -21,4 +21,3 @@ C:\Users\User\source\repos\FormGiris.cs\obj\Debug\FormGiris.cs.FormKullaniciYone
 C:\Users\User\source\repos\FormGiris.cs\obj\Debug\FormGiris.cs.exe.config
 C:\Users\User\source\repos\FormGiris.cs\obj\Debug\FormGiris.cs.FormSatisFaturasi.resources
 C:\Users\User\source\repos\FormGiris.cs\obj\Debug\FormGiris.cs.FormBilgiFisi.resources
-C:\Users\User\source\repos\FormGiris.cs\obj\Debug\FormGiris.cs.FormFisDetay.resources

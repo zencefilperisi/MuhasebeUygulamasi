@@ -12,6 +12,7 @@ namespace FormGiris.cs
 {
     public partial class FormCariKart : Form
     {
+        public CariKart SecilenCari { get; private set; }
         public FormCariKart()
         {
             InitializeComponent();
@@ -177,6 +178,20 @@ namespace FormGiris.cs
         private void btnAra_Click(object sender, EventArgs e)
         {
             AramaYap();
+        }
+
+        private void dataGridCariler_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                int id = Convert.ToInt32(dataGridCariler.Rows[e.RowIndex].Cells["Id"].Value);
+                using (var db = new MuhasebeDBEntities2())
+                {
+                    SecilenCari = db.CariKart.FirstOrDefault(c => c.Id == id);
+                }
+                this.DialogResult = DialogResult.OK; // 🔹 Seçim yapıldığını belirt
+                this.Close();
+            }
         }
     }
 }

@@ -16,7 +16,7 @@
           <Property Name="Adres" Type="nvarchar" MaxLength="250" />
           <Property Name="Email" Type="nvarchar" MaxLength="100" />
         </EntityType>
-        <EntityType Name="Fis">
+        <EntityType Name="FisAll">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -25,13 +25,6 @@
           <Property Name="Cari" Type="nvarchar" MaxLength="100" />
           <Property Name="OdemeTuru" Type="nvarchar" MaxLength="50" />
           <Property Name="Tarih" Type="datetime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="FisDetay">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FisId" Type="int" Nullable="false" />
           <Property Name="UrunKodu" Type="nvarchar" MaxLength="50" />
           <Property Name="UrunAdi" Type="nvarchar" MaxLength="100" />
           <Property Name="Miktar" Type="decimal" Precision="18" Scale="2" Nullable="false" />
@@ -88,30 +81,13 @@
           <Property Name="AdSoyad" Type="nvarchar" MaxLength="100" />
           <Property Name="Yetki" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <Association Name="FK__FisDetay__FisId__18EBB532">
-          <End Role="Fis" Type="Self.Fis" Multiplicity="1" />
-          <End Role="FisDetay" Type="Self.FisDetay" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Fis">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="FisDetay">
-              <PropertyRef Name="FisId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="MuhasebeDBModelStoreContainer">
           <EntitySet Name="CariKart" EntityType="Self.CariKart" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Fis" EntityType="Self.Fis" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="FisDetay" EntityType="Self.FisDetay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FisAll" EntityType="Self.FisAll" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Kullanici" EntityType="Self.Kullanici" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SatisFatura" EntityType="Self.SatisFatura" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StokKart" EntityType="Self.StokKart" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__FisDetay__FisId__18EBB532" Association="Self.FK__FisDetay__FisId__18EBB532">
-            <End Role="Fis" EntitySet="Fis" />
-            <End Role="FisDetay" EntitySet="FisDetay" />
-          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -160,12 +136,7 @@
           <EntitySet Name="StokKart" EntityType="Self.StokKart" />
           <EntitySet Name="Users" EntityType="MuhasebeDBModel.Users" />
           <EntitySet Name="SatisFatura" EntityType="MuhasebeDBModel.SatisFatura" />
-          <EntitySet Name="Fis" EntityType="MuhasebeDBModel.Fis" />
-          <EntitySet Name="FisDetay" EntityType="MuhasebeDBModel.FisDetay" />
-          <AssociationSet Name="FK__FisDetay__FisId__18EBB532" Association="MuhasebeDBModel.FK__FisDetay__FisId__18EBB532">
-            <End Role="Fis" EntitySet="Fis" />
-            <End Role="FisDetay" EntitySet="FisDetay" />
-          </AssociationSet>
+          <EntitySet Name="FisAll" EntityType="MuhasebeDBModel.FisAll" />
         </EntityContainer>
         <EntityType Name="Users">
           <Key>
@@ -190,7 +161,7 @@
           <Property Name="BirimFiyat" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
-        <EntityType Name="Fis">
+        <EntityType Name="FisAll">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -199,34 +170,13 @@
           <Property Name="Cari" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="OdemeTuru" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="FisDetay" Relationship="MuhasebeDBModel.FK__FisDetay__FisId__18EBB532" FromRole="Fis" ToRole="FisDetay" />
-        </EntityType>
-        <EntityType Name="FisDetay">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FisId" Type="Int32" Nullable="false" />
           <Property Name="UrunKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UrunAdi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Miktar" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="BirimFiyat" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="Kdv" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
           <Property Name="Toplam" Type="Decimal" Precision="38" Scale="5" annotation:StoreGeneratedPattern="Computed" />
-          <NavigationProperty Name="Fis" Relationship="MuhasebeDBModel.FK__FisDetay__FisId__18EBB532" FromRole="FisDetay" ToRole="Fis" />
         </EntityType>
-        <Association Name="FK__FisDetay__FisId__18EBB532">
-          <End Type="MuhasebeDBModel.Fis" Role="Fis" Multiplicity="1" />
-          <End Type="MuhasebeDBModel.FisDetay" Role="FisDetay" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Fis">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="FisDetay">
-              <PropertyRef Name="FisId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -298,9 +248,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Fis">
-            <EntityTypeMapping TypeName="MuhasebeDBModel.Fis">
-              <MappingFragment StoreEntitySet="Fis">
+          <EntitySetMapping Name="FisAll">
+            <EntityTypeMapping TypeName="MuhasebeDBModel.FisAll">
+              <MappingFragment StoreEntitySet="FisAll">
+                <ScalarProperty Name="Toplam" ColumnName="Toplam" />
+                <ScalarProperty Name="Kdv" ColumnName="Kdv" />
+                <ScalarProperty Name="BirimFiyat" ColumnName="BirimFiyat" />
+                <ScalarProperty Name="Miktar" ColumnName="Miktar" />
+                <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
+                <ScalarProperty Name="UrunKodu" ColumnName="UrunKodu" />
                 <ScalarProperty Name="Tarih" ColumnName="Tarih" />
                 <ScalarProperty Name="OdemeTuru" ColumnName="OdemeTuru" />
                 <ScalarProperty Name="Cari" ColumnName="Cari" />
@@ -309,21 +265,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="FisDetay">
-            <EntityTypeMapping TypeName="MuhasebeDBModel.FisDetay">
-              <MappingFragment StoreEntitySet="FisDetay">
-                <ScalarProperty Name="Toplam" ColumnName="Toplam" />
-                <ScalarProperty Name="Kdv" ColumnName="Kdv" />
-                <ScalarProperty Name="BirimFiyat" ColumnName="BirimFiyat" />
-                <ScalarProperty Name="Miktar" ColumnName="Miktar" />
-                <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
-                <ScalarProperty Name="UrunKodu" ColumnName="UrunKodu" />
-                <ScalarProperty Name="FisId" ColumnName="FisId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

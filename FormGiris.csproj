@@ -61,10 +61,7 @@
     <Compile Include="CariKart.cs">
       <DependentUpon>MuhasebeModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Fis.cs">
-      <DependentUpon>MuhasebeModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="FisDetay.cs">
+    <Compile Include="FisAll.cs">
       <DependentUpon>MuhasebeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="FormAnaMenu.cs">
@@ -90,12 +87,6 @@
     </Compile>
     <Compile Include="FormDovizKurlari.Designer.cs">
       <DependentUpon>FormDovizKurlari.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormFisDetay.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormFisDetay.Designer.cs">
-      <DependentUpon>FormFisDetay.cs</DependentUpon>
     </Compile>
     <Compile Include="FormGiris.cs">
       <SubType>Form</SubType>
@@ -161,9 +152,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDovizKurlari.resx">
       <DependentUpon>FormDovizKurlari.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormFisDetay.resx">
-      <DependentUpon>FormFisDetay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGiris.resx">
       <DependentUpon>FormGiris.cs</DependentUpon>

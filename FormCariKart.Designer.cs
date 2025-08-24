@@ -150,6 +150,7 @@
             this.dataGridCariler.RowTemplate.Height = 24;
             this.dataGridCariler.Size = new System.Drawing.Size(491, 165);
             this.dataGridCariler.TabIndex = 10;
+            this.dataGridCariler.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridCariler_CellDoubleClick);
             // 
             // btnEkle
             // 
