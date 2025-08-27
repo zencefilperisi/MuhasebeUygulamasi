@@ -12,6 +12,7 @@ namespace FormGiris.cs
 {
     public partial class FormSatisFaturasi : Form
     {
+        private string FisKoduSecilen;
         private MuhasebeDBEntities2 db = new MuhasebeDBEntities2();
         private SatisFatura secilenFatura;
 
@@ -19,6 +20,12 @@ namespace FormGiris.cs
         {
             InitializeComponent();
         }
+        public FormSatisFaturasi(SatisFatura fatura)
+        {
+            InitializeComponent();
+            FisKoduSecilen = fatura.FaturaNo.ToString();
+        }
+
 
         private void FormSatisFaturasi_Load(object sender, EventArgs e)
         {
@@ -108,11 +115,10 @@ namespace FormGiris.cs
                 if (frm.ShowDialog() == DialogResult.OK && frm.SecilenCari != null)
                 {
                     txtCariKodu.Text = frm.SecilenCari.CariKodu;
-                    // txtCariAdi.Text = frm.SecilenCari.CariAdi; // opsiyonel
+                    // opsiyonel: txtCariAdi.Text = frm.SecilenCari.CariAdi;
                 }
             }
         }
-
         private void btnBilgiFisi_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtFaturaNo.Text))
@@ -124,6 +130,17 @@ namespace FormGiris.cs
             using (FormBilgiFisi frmBilgiFisi = new FormBilgiFisi(txtFaturaNo.Text))
             {
                 frmBilgiFisi.ShowDialog();
+            }
+        }
+        private void btnUrunSec_Click(object sender, EventArgs e)
+        {
+            FormUrunSec urunSec = new FormUrunSec();
+            if (urunSec.ShowDialog() == DialogResult.OK)
+            {
+                txtUrunKodu.Text = urunSec.Kodu;
+                txtUrunAdi.Text = urunSec.Adi;
+                txtMiktar.Text = urunSec.Miktar.ToString();
+                txtBirimFiyat.Text = urunSec.BirimFiyat.ToString("F2");
             }
         }
     }

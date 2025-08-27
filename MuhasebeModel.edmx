@@ -71,6 +71,16 @@
           <Property Name="KDV" Type="decimal" Precision="5" Scale="2" />
           <Property Name="Aciklama" Type="nvarchar" MaxLength="255" />
         </EntityType>
+        <EntityType Name="Urun">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Kodu" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Adi" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Miktar" Type="int" Nullable="false" />
+          <Property Name="BirimFiyat" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="Id" />
@@ -87,6 +97,7 @@
           <EntitySet Name="Kullanici" EntityType="Self.Kullanici" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SatisFatura" EntityType="Self.SatisFatura" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StokKart" EntityType="Self.StokKart" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Urun" EntityType="Self.Urun" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -137,6 +148,7 @@
           <EntitySet Name="Users" EntityType="MuhasebeDBModel.Users" />
           <EntitySet Name="SatisFatura" EntityType="MuhasebeDBModel.SatisFatura" />
           <EntitySet Name="FisAll" EntityType="MuhasebeDBModel.FisAll" />
+          <EntitySet Name="Urun" EntityType="MuhasebeDBModel.Urun" />
         </EntityContainer>
         <EntityType Name="Users">
           <Key>
@@ -176,6 +188,16 @@
           <Property Name="BirimFiyat" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="Kdv" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
           <Property Name="Toplam" Type="Decimal" Precision="38" Scale="5" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="Urun">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kodu" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adi" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Miktar" Type="Int32" Nullable="false" />
+          <Property Name="BirimFiyat" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -261,6 +283,17 @@
                 <ScalarProperty Name="OdemeTuru" ColumnName="OdemeTuru" />
                 <ScalarProperty Name="Cari" ColumnName="Cari" />
                 <ScalarProperty Name="FisKodu" ColumnName="FisKodu" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Urun">
+            <EntityTypeMapping TypeName="MuhasebeDBModel.Urun">
+              <MappingFragment StoreEntitySet="Urun">
+                <ScalarProperty Name="BirimFiyat" ColumnName="BirimFiyat" />
+                <ScalarProperty Name="Miktar" ColumnName="Miktar" />
+                <ScalarProperty Name="Adi" ColumnName="Adi" />
+                <ScalarProperty Name="Kodu" ColumnName="Kodu" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

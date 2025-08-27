@@ -48,6 +48,7 @@
             this.txtBirimFiyat = new System.Windows.Forms.TextBox();
             this.btnCariSec = new System.Windows.Forms.Button();
             this.btnBilgiFisi = new System.Windows.Forms.Button();
+            this.btnUrunSec = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFaturaDetay)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,9 +117,9 @@
             // 
             this.btnEkle.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.btnEkle.Font = new System.Drawing.Font("Franklin Gothic Demi", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnEkle.Location = new System.Drawing.Point(276, 218);
+            this.btnEkle.Location = new System.Drawing.Point(258, 218);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(109, 46);
+            this.btnEkle.Size = new System.Drawing.Size(95, 46);
             this.btnEkle.TabIndex = 12;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.UseVisualStyleBackColor = false;
@@ -128,9 +129,9 @@
             // 
             this.btnTemizle.BackColor = System.Drawing.Color.Salmon;
             this.btnTemizle.Font = new System.Drawing.Font("Franklin Gothic Demi", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnTemizle.Location = new System.Drawing.Point(517, 218);
+            this.btnTemizle.Location = new System.Drawing.Point(455, 218);
             this.btnTemizle.Name = "btnTemizle";
-            this.btnTemizle.Size = new System.Drawing.Size(109, 46);
+            this.btnTemizle.Size = new System.Drawing.Size(95, 46);
             this.btnTemizle.TabIndex = 14;
             this.btnTemizle.Text = "Temizle";
             this.btnTemizle.UseVisualStyleBackColor = false;
@@ -139,9 +140,9 @@
             // 
             this.btnKaydet.BackColor = System.Drawing.Color.PaleVioletRed;
             this.btnKaydet.Font = new System.Drawing.Font("Franklin Gothic Demi", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnKaydet.Location = new System.Drawing.Point(396, 218);
+            this.btnKaydet.Location = new System.Drawing.Point(356, 218);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(109, 46);
+            this.btnKaydet.Size = new System.Drawing.Size(95, 46);
             this.btnKaydet.TabIndex = 15;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = false;
@@ -233,7 +234,7 @@
             this.btnCariSec.Font = new System.Drawing.Font("Franklin Gothic Demi", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnCariSec.Location = new System.Drawing.Point(157, 218);
             this.btnCariSec.Name = "btnCariSec";
-            this.btnCariSec.Size = new System.Drawing.Size(109, 46);
+            this.btnCariSec.Size = new System.Drawing.Size(95, 46);
             this.btnCariSec.TabIndex = 25;
             this.btnCariSec.Text = "Cari Seç";
             this.btnCariSec.UseVisualStyleBackColor = false;
@@ -243,12 +244,25 @@
             // 
             this.btnBilgiFisi.BackColor = System.Drawing.Color.Plum;
             this.btnBilgiFisi.Font = new System.Drawing.Font("Franklin Gothic Demi", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnBilgiFisi.Location = new System.Drawing.Point(642, 218);
+            this.btnBilgiFisi.Location = new System.Drawing.Point(555, 218);
             this.btnBilgiFisi.Name = "btnBilgiFisi";
-            this.btnBilgiFisi.Size = new System.Drawing.Size(109, 46);
+            this.btnBilgiFisi.Size = new System.Drawing.Size(95, 46);
             this.btnBilgiFisi.TabIndex = 26;
             this.btnBilgiFisi.Text = "Bilgi Fişi";
             this.btnBilgiFisi.UseVisualStyleBackColor = false;
+            this.btnBilgiFisi.Click += new System.EventHandler(this.btnBilgiFisi_Click);
+            // 
+            // btnUrunSec
+            // 
+            this.btnUrunSec.BackColor = System.Drawing.Color.MistyRose;
+            this.btnUrunSec.Font = new System.Drawing.Font("Franklin Gothic Demi", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUrunSec.Location = new System.Drawing.Point(656, 218);
+            this.btnUrunSec.Name = "btnUrunSec";
+            this.btnUrunSec.Size = new System.Drawing.Size(95, 46);
+            this.btnUrunSec.TabIndex = 27;
+            this.btnUrunSec.Text = "Ürün Seç";
+            this.btnUrunSec.UseVisualStyleBackColor = false;
+            this.btnUrunSec.Click += new System.EventHandler(this.btnUrunSec_Click);
             // 
             // FormSatisFaturasi
             // 
@@ -256,6 +270,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(890, 450);
+            this.Controls.Add(this.btnUrunSec);
             this.Controls.Add(this.btnBilgiFisi);
             this.Controls.Add(this.btnCariSec);
             this.Controls.Add(this.txtBirimFiyat);
@@ -307,5 +322,6 @@
         private System.Windows.Forms.TextBox txtBirimFiyat;
         private System.Windows.Forms.Button btnCariSec;
         private System.Windows.Forms.Button btnBilgiFisi;
+        private System.Windows.Forms.Button btnUrunSec;
     }
 }

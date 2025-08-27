@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MuhasebeDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CariKart">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CariKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CariAdi" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Telefon" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Adres" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Kullanici">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KullaniciAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sifre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AdSoyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Telefon" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Rol" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Aktif" Type="Boolean" />
+    <Property Name="KayitTarihi" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="StokKart">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StokKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StokAdi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Birim" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Barkod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="KDV" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="Aciklama" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="MuhasebeDBEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CariKart" EntityType="Self.CariKart" />
+    <EntitySet Name="Kullanici" EntityType="Self.Kullanici" />
+    <EntitySet Name="StokKart" EntityType="Self.StokKart" />
+    <EntitySet Name="Users" EntityType="MuhasebeDBModel.Users" />
+    <EntitySet Name="SatisFatura" EntityType="MuhasebeDBModel.SatisFatura" />
+    <EntitySet Name="FisAll" EntityType="MuhasebeDBModel.FisAll" />
+    <EntitySet Name="Urun" EntityType="MuhasebeDBModel.Urun" />
+  </EntityContainer>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KullaniciAdi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sifre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AdSoyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Yetki" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SatisFatura">
+    <Key>
+      <PropertyRef Name="FaturaId" />
+    </Key>
+    <Property Name="FaturaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FaturaNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CariKodu" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UrunKodu" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UrunAdi" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Miktar" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="BirimFiyat" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="FisAll">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FisKodu" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cari" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="OdemeTuru" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UrunKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UrunAdi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Miktar" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="BirimFiyat" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Kdv" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
+    <Property Name="Toplam" Type="Decimal" Precision="38" Scale="5" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Urun">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kodu" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Adi" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Miktar" Type="Int32" Nullable="false" />
+    <Property Name="BirimFiyat" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+  </EntityType>
+</Schema>

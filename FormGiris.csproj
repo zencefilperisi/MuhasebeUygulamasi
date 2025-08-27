@@ -112,6 +112,12 @@
     <Compile Include="FormStokKart.Designer.cs">
       <DependentUpon>FormStokKart.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUrunSec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUrunSec.Designer.cs">
+      <DependentUpon>FormUrunSec.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kullanici.cs">
       <DependentUpon>MuhasebeModel.tt</DependentUpon>
     </Compile>
@@ -136,6 +142,9 @@
       <DependentUpon>MuhasebeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="StokKart.cs">
+      <DependentUpon>MuhasebeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Urun.cs">
       <DependentUpon>MuhasebeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Users.cs">
@@ -164,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormStokKart.resx">
       <DependentUpon>FormStokKart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUrunSec.resx">
+      <DependentUpon>FormUrunSec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

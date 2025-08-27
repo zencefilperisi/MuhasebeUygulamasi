@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MuhasebeDBModelStoreContainer" CdmEntityContainer="MuhasebeDBEntities2">
+    <EntitySetMapping Name="CariKart">
+      <EntityTypeMapping TypeName="MuhasebeDBModel.CariKart">
+        <MappingFragment StoreEntitySet="CariKart">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CariKodu" ColumnName="CariKodu" />
+          <ScalarProperty Name="CariAdi" ColumnName="CariAdi" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kullanici">
+      <EntityTypeMapping TypeName="MuhasebeDBModel.Kullanici">
+        <MappingFragment StoreEntitySet="Kullanici">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+          <ScalarProperty Name="Aktif" ColumnName="Aktif" />
+          <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StokKart">
+      <EntityTypeMapping TypeName="MuhasebeDBModel.StokKart">
+        <MappingFragment StoreEntitySet="StokKart">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StokKodu" ColumnName="StokKodu" />
+          <ScalarProperty Name="StokAdi" ColumnName="StokAdi" />
+          <ScalarProperty Name="Birim" ColumnName="Birim" />
+          <ScalarProperty Name="Barkod" ColumnName="Barkod" />
+          <ScalarProperty Name="KDV" ColumnName="KDV" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="MuhasebeDBModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Yetki" ColumnName="Yetki" />
+          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SatisFatura">
+      <EntityTypeMapping TypeName="MuhasebeDBModel.SatisFatura">
+        <MappingFragment StoreEntitySet="SatisFatura">
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="BirimFiyat" ColumnName="BirimFiyat" />
+          <ScalarProperty Name="Miktar" ColumnName="Miktar" />
+          <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
+          <ScalarProperty Name="UrunKodu" ColumnName="UrunKodu" />
+          <ScalarProperty Name="CariKodu" ColumnName="CariKodu" />
+          <ScalarProperty Name="FaturaNo" ColumnName="FaturaNo" />
+          <ScalarProperty Name="FaturaId" ColumnName="FaturaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FisAll">
+      <EntityTypeMapping TypeName="MuhasebeDBModel.FisAll">
+        <MappingFragment StoreEntitySet="FisAll">
+          <ScalarProperty Name="Toplam" ColumnName="Toplam" />
+          <ScalarProperty Name="Kdv" ColumnName="Kdv" />
+          <ScalarProperty Name="BirimFiyat" ColumnName="BirimFiyat" />
+          <ScalarProperty Name="Miktar" ColumnName="Miktar" />
+          <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
+          <ScalarProperty Name="UrunKodu" ColumnName="UrunKodu" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="OdemeTuru" ColumnName="OdemeTuru" />
+          <ScalarProperty Name="Cari" ColumnName="Cari" />
+          <ScalarProperty Name="FisKodu" ColumnName="FisKodu" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Urun">
+      <EntityTypeMapping TypeName="MuhasebeDBModel.Urun">
+        <MappingFragment StoreEntitySet="Urun">
+          <ScalarProperty Name="BirimFiyat" ColumnName="BirimFiyat" />
+          <ScalarProperty Name="Miktar" ColumnName="Miktar" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Kodu" ColumnName="Kodu" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
