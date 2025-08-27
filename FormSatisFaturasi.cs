@@ -139,7 +139,7 @@ namespace FormGiris.cs
             {
                 txtUrunKodu.Text = urunSec.Kodu;
                 txtUrunAdi.Text = urunSec.Adi;
-                txtMiktar.Text = urunSec.Miktar.ToString();
+                txtMiktar.Text = urunSec.txtMiktar.ToString();
                 txtBirimFiyat.Text = urunSec.BirimFiyat.ToString("F2");
             }
         }

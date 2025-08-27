@@ -12,9 +12,22 @@ namespace FormGiris.cs
 {
     public partial class FormUrunSec : Form
     {
+        public string Kodu { get; set; }
+        public string Adi { get; set; }
+        public decimal Miktar { get; set; }
+        public decimal BirimFiyat { get; set; }
         public FormUrunSec()
         {
             InitializeComponent();
+        }
+        private void btnSec_Click(object sender, EventArgs e)
+        {
+            Kodu = txtUrunKodu.Text;
+            Adi = txtUrunAdi.Text;
+            Miktar = decimal.Parse(txtMiktar.Text);
+            BirimFiyat = decimal.Parse(txtBirimFiyat.Text);
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void dataGridViewUrunler_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -23,7 +36,7 @@ namespace FormGiris.cs
             {
                 Kodu = dgvUrunler.Rows[e.RowIndex].Cells["Kodu"].Value.ToString();
                 Adi = dgvUrunler.Rows[e.RowIndex].Cells["Adi"].Value.ToString();
-                Miktar = Convert.ToInt32(dgvUrunler.Rows[e.RowIndex].Cells["Miktar"].Value);
+                txtMiktar.Text = txtMiktar.ToString();
                 BirimFiyat = Convert.ToDecimal(dgvUrunler.Rows[e.RowIndex].Cells["BirimFiyat"].Value);
                 this.DialogResult = DialogResult.OK;
                 this.Close();

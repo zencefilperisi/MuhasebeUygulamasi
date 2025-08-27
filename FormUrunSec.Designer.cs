@@ -5,7 +5,7 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        public System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -34,11 +34,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtUrunKodu = new System.Windows.Forms.TextBox();
             this.txtUrunAdi = new System.Windows.Forms.TextBox();
-            this.Miktar = new System.Windows.Forms.TextBox();
+            this.txtMiktar = new System.Windows.Forms.TextBox();
             this.txtBirimFiyat = new System.Windows.Forms.TextBox();
             this.dgvUrunler = new System.Windows.Forms.DataGridView();
             this.txtAra = new System.Windows.Forms.TextBox();
             this.btnAra = new System.Windows.Forms.Button();
+            this.btnSec = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUrunler)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,13 +99,13 @@
             this.txtUrunAdi.Size = new System.Drawing.Size(100, 28);
             this.txtUrunAdi.TabIndex = 7;
             // 
-            // Miktar
+            // txtMiktar
             // 
-            this.Miktar.Font = new System.Drawing.Font("Franklin Gothic Demi", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Miktar.Location = new System.Drawing.Point(169, 182);
-            this.Miktar.Name = "Miktar";
-            this.Miktar.Size = new System.Drawing.Size(100, 28);
-            this.Miktar.TabIndex = 8;
+            this.txtMiktar.Font = new System.Drawing.Font("Franklin Gothic Demi", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtMiktar.Location = new System.Drawing.Point(169, 182);
+            this.txtMiktar.Name = "txtMiktar";
+            this.txtMiktar.Size = new System.Drawing.Size(100, 28);
+            this.txtMiktar.TabIndex = 8;
             // 
             // txtBirimFiyat
             // 
@@ -149,17 +150,30 @@
             this.btnAra.Text = "Ara";
             this.btnAra.UseVisualStyleBackColor = false;
             // 
+            // btnSec
+            // 
+            this.btnSec.BackColor = System.Drawing.Color.Lavender;
+            this.btnSec.Font = new System.Drawing.Font("Franklin Gothic Demi", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSec.Location = new System.Drawing.Point(346, 202);
+            this.btnSec.Name = "btnSec";
+            this.btnSec.Size = new System.Drawing.Size(109, 46);
+            this.btnSec.TabIndex = 23;
+            this.btnSec.Text = "Seç";
+            this.btnSec.UseVisualStyleBackColor = false;
+            this.btnSec.Click += new System.EventHandler(this.btnSec_Click);
+            // 
             // FormUrunSec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSec);
             this.Controls.Add(this.btnAra);
             this.Controls.Add(this.txtAra);
             this.Controls.Add(this.dgvUrunler);
             this.Controls.Add(this.txtBirimFiyat);
-            this.Controls.Add(this.Miktar);
+            this.Controls.Add(this.txtMiktar);
             this.Controls.Add(this.txtUrunAdi);
             this.Controls.Add(this.txtUrunKodu);
             this.Controls.Add(this.label4);
@@ -176,16 +190,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtUrunKodu;
-        private System.Windows.Forms.TextBox txtUrunAdi;
-        private System.Windows.Forms.TextBox Miktar;
-        private System.Windows.Forms.TextBox txtBirimFiyat;
-        private System.Windows.Forms.DataGridView dgvUrunler;
-        private System.Windows.Forms.TextBox txtAra;
-        private System.Windows.Forms.Button btnAra;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.TextBox txtUrunKodu;
+        public System.Windows.Forms.TextBox txtUrunAdi;
+        public System.Windows.Forms.TextBox txtMiktar;
+        public System.Windows.Forms.TextBox txtBirimFiyat;
+        public System.Windows.Forms.DataGridView dgvUrunler;
+        public System.Windows.Forms.TextBox txtAra;
+        public System.Windows.Forms.Button btnAra;
+        private System.Windows.Forms.Button btnSec;
     }
 }
