@@ -251,6 +251,7 @@
             this.btnTemizle.TabIndex = 18;
             this.btnTemizle.Text = "Temizle";
             this.btnTemizle.UseVisualStyleBackColor = false;
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 
             // FormStokKart
             // 

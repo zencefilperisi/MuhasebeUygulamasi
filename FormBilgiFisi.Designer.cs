@@ -149,6 +149,7 @@
             this.btnEkle.TabIndex = 24;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.UseVisualStyleBackColor = false;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // btnKaydet
             // 
@@ -160,6 +161,7 @@
             this.btnKaydet.TabIndex = 25;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = false;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // btnTemizle
             // 
@@ -171,6 +173,7 @@
             this.btnTemizle.TabIndex = 26;
             this.btnTemizle.Text = "Temizle";
             this.btnTemizle.UseVisualStyleBackColor = false;
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 
             // txtAraToplam
             // 

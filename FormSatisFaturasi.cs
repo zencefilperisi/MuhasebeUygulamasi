@@ -143,5 +143,21 @@ namespace FormGiris.cs
                 txtBirimFiyat.Text = urunSec.BirimFiyat.ToString("F2");
             }
         }
+        private void Temizle(Control parent)
+        {
+            foreach (Control ctrl in parent.Controls)
+            {
+                if (ctrl is TextBox)
+                    ((TextBox)ctrl).Clear();
+                if (ctrl is ComboBox)
+                    ((ComboBox)ctrl).SelectedIndex = -1;
+                if (ctrl.HasChildren)
+                    Temizle(ctrl);
+            }
+        }
+        private void btnTemizle_Click(object sender, EventArgs e)
+        {
+            Temizle(this);
+        }
     }
 }

@@ -59,7 +59,7 @@
             // stokKartıToolStripMenuItem
             // 
             this.stokKartıToolStripMenuItem.Name = "stokKartıToolStripMenuItem";
-            this.stokKartıToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
+            this.stokKartıToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.stokKartıToolStripMenuItem.Text = "Stok Kartları";
             this.stokKartıToolStripMenuItem.Click += new System.EventHandler(this.stokKartlaritoolStripMenuItem1_Click);
             // 
@@ -119,7 +119,7 @@
             // satışFaturasıToolStripMenuItem
             // 
             this.satışFaturasıToolStripMenuItem.Name = "satışFaturasıToolStripMenuItem";
-            this.satışFaturasıToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.satışFaturasıToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
             this.satışFaturasıToolStripMenuItem.Text = "Satış Faturası";
             this.satışFaturasıToolStripMenuItem.Click += new System.EventHandler(this.satışFaturasıToolStripMenuItem_Click);
             // 

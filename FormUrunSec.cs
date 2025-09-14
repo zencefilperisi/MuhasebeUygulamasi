@@ -42,5 +42,20 @@ namespace FormGiris.cs
                 this.Close();
             }
         }
+
+        private void btnAra_Click(object sender, EventArgs e)
+        {
+            string urunAdi = txtUrunAdi.Text.Trim().ToLower();
+            string urunKodu = txtUrunKodu.Text.Trim().ToLower();
+
+            // DataGridView'in adı dgvUrunler ise örnek filtreleme:
+            foreach (DataGridViewRow row in dgvUrunler.Rows)
+            {
+                bool urunAdiEslesiyor = row.Cells["UrunAdi"].Value.ToString().ToLower().Contains(urunAdi);
+                bool urunKoduEslesiyor = row.Cells["UrunKodu"].Value.ToString().ToLower().Contains(urunKodu);
+
+                row.Visible = urunAdiEslesiyor && urunKoduEslesiyor;
+            }
+        }
     }
 }

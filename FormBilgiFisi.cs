@@ -97,5 +97,75 @@ namespace FormGiris.cs
                 ToplamlariGuncelle(SecilenFisAll.FisKodu);
             }
         }
+        private void Temizle(Control parent)
+        {
+            foreach (Control ctrl in parent.Controls)
+            {
+                if (ctrl is TextBox)
+                    ((TextBox)ctrl).Clear();
+                if (ctrl is ComboBox)
+                    ((ComboBox)ctrl).SelectedIndex = -1;
+                if (ctrl.HasChildren)
+                    Temizle(ctrl);
+            }
+        }
+        private void btnTemizle_Click(object sender, EventArgs e)
+        {
+            Temizle(this);
+        }
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+            // Yeni FisAll nesnesi oluştur
+            var yeniFis = new FisAll
+            {
+                FisKodu = txtFisKodu.Text,
+                Cari = txtCari.Text,
+                OdemeTuru = txtOdemeTuru.Text,
+                Tarih = dtpTarih.Value
+            };
+            // Listeye ekle
+            FisAllListesi.Add(yeniFis);
+
+            // DataGridView'i güncelle
+            dgvFisAll.DataSource = null;
+            dgvFisAll.DataSource = FisAllListesi.Select(f => new
+            {
+                f.Id,
+                f.FisKodu,
+                f.Cari,
+                f.OdemeTuru,
+                f.Tarih
+            }).ToList();
+
+            ToplamlariGuncelle(yeniFis.FisKodu);
+            Temizle(this);
+        }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (var fis in FisAllListesi)
+                {
+                    // Eğer veritabanında yoksa ekle
+                    if (!db.FisAll.Any(f => f.Id == fis.Id && f.Id != 0))
+                    {
+                        db.FisAll.Add(fis);
+                    }
+                }
+                db.SaveChanges();
+
+                MessageBox.Show("Kayıtlar başarıyla kaydedildi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Yeniden listele ve temizle
+                Listele();
+                Temizle(this);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Kayıt sırasında hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
